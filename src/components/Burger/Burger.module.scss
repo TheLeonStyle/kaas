@@ -1,0 +1,190 @@
+@import "../../scss/mixins";
+.burger {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	z-index: 2000;
+	width: 50%;
+	height: 100vh;
+	box-shadow: rem(2) 0px rem(10) rem(1) rgba(0, 0, 0, 0.75);
+	background-color: $bgBlueDark;
+	background: rgb(1, 146, 203);
+	background: linear-gradient(45deg, rgba(1, 146, 203, 1) 0%, rgba(0, 159, 222, 1) 100%);
+	transition: left 0.3s ease 0s;
+
+	&.active {
+		left: 0;
+	}
+
+	@media (max-width: $mobile) {
+		width: 100%;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: rem(20);
+		height: 100%;
+		padding: rem(30) rem(15) rem(15) rem(15);
+		overflow-y: auto;
+
+		@media (min-width: $mobile) {
+			&::-webkit-scrollbar {
+				width: 10px;
+				&-track {
+					background: $bgMain;
+				}
+				&-thumb {
+					background-color: rgba($color: $bgTernary, $alpha: 0.7);
+					border-radius: 6px;
+					&:hover {
+						background-color: $bgTernary;
+					}
+				}
+			}
+		}
+	}
+
+	&__header {
+		display: none;
+		justify-content: flex-end;
+		@media (max-width: $mobile) {
+			display: flex;
+		}
+	}
+	&__close {
+		width: rem(28);
+		height: rem(20);
+		position: relative;
+
+		&::after,
+		&::before,
+		span {
+			content: "";
+			display: block;
+			width: 100%;
+			height: rem(3);
+			background-color: $bgMain;
+			position: absolute;
+			transition:
+				transform 0.3s ease 0s,
+				width 0.3s ease 0s,
+				top 0.3s ease 0s;
+		}
+
+		&::after {
+			top: 50%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+		&::before {
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
+	&__categories {
+		flex: 1;
+	}
+	&__category {
+		display: flex;
+		flex-direction: column;
+
+		&:hover .burger__lists {
+			display: block;
+		}
+		&:hover .burger__button {
+			&::after {
+				transform: translate(0px, -50%) rotate(180deg);
+			}
+		}
+	}
+	&__button {
+		color: $bgMain;
+		font-weight: 700;
+		font-size: rem(16);
+		padding: rem(5) rem(20) rem(5) 0;
+		text-align: left;
+		position: relative;
+
+		&::after {
+			content: "\2228";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0px, -50%);
+			width: rem(10);
+			height: rem(21);
+			transition: all 0.3s ease 0s;
+		}
+	}
+	&__lists {
+		display: none;
+		padding: rem(10) 0;
+	}
+	&__list {
+		padding: 0 rem(10);
+		margin-bottom: em(5, 14);
+		display: flex;
+
+		a {
+			flex: 1;
+			color: $bgMain;
+			font-size: rem(14);
+			padding: rem(8);
+
+			transition: color 0.3s ease 0s;
+			&:focus,
+			&:hover {
+				color: $bgSecondary;
+				font-weight: 600;
+			}
+		}
+	}
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+		}
+	}
+	&__social {
+		display: flex;
+		gap: rem(5);
+	}
+	&__link {
+		color: $bgBlue;
+
+		width: rem(35);
+		height: rem(35);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $bgMain;
+		border-radius: 50%;
+		transition: background-color 0.3s ease 0s;
+		&:hover {
+			background-color: rgba($color: $bgMain, $alpha: 0.9);
+		}
+	}
+	&__call {
+		display: none;
+		color: $bgBlue;
+		font-size: rem(14);
+		font-weight: 700;
+		background-color: $bgMain;
+		border-radius: rem(20);
+		padding: rem(10) rem(20);
+		transition: background-color 0.3s ease 0s;
+
+		&:hover {
+			background-color: rgba($color: $bgMain, $alpha: 0.9);
+		}
+		@media (max-width: $mobile) {
+			display: block;
+		}
+		@media (max-width: $mobileSmall) {
+			padding: rem(10) rem(30);
+		}
+	}
+}

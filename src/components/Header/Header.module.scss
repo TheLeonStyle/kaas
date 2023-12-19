@@ -1,0 +1,249 @@
+@import "../../scss/mixins";
+
+.header {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	// background-color: rgba($color: $bgMain, $alpha: 0.6);
+	background-color: $bgMain;
+
+	&__container {
+	}
+	&__top {
+		display: flex;
+		align-items: center;
+		gap: rem(20);
+		padding: rem(10) 0;
+
+		border-bottom: rem(1) solid $bgSecondary;
+
+		// @media (max-width: $mobile) {
+		// 	justify-content: space-between;
+		// }
+	}
+	&__logo {
+		// @include adaptiveValue("width", 300, 270, 991.98, 767.98, 1);
+		@include adaptiveValue("width", 300, 200, 991.98, 320, 1);
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__search {
+		flex: 1;
+		border: rem(2) solid $bgBlueDark;
+		padding: rem(8) rem(20);
+		border-radius: rem(20);
+		transition: border-color 0.3s ease 0s;
+
+		font-size: inherit;
+		color: $bgTernary;
+
+		&:focus {
+			border-color: $bgBlue;
+		}
+
+		@media (max-width: $mobile) {
+			display: none;
+		}
+
+		&_icon {
+			display: none;
+			flex: 1;
+			text-align: right;
+			font-size: rem(20);
+			color: $bgBlueDark;
+
+			@media (max-width: $mobile) {
+				display: block;
+			}
+		}
+	}
+	&__social {
+		display: flex;
+		justify-content: flex-end;
+		gap: rem(10);
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+	&__link {
+		color: $colorWhite;
+
+		width: rem(35);
+		height: rem(35);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $bgBlueDark;
+		border-radius: 50%;
+		transition: background-color 0.3s ease 0s;
+
+		&:focus,
+		&:hover {
+			background-color: $bgBlue;
+		}
+	}
+	&__call {
+		color: $bgSecondary;
+		font-size: rem(14);
+		font-weight: 700;
+		background-color: $bgBlueDark;
+		border-radius: rem(20);
+		padding: rem(10) rem(20);
+
+		&:focus,
+		&:hover {
+			background-color: $bgBlue;
+		}
+
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__burger {
+		display: none;
+		width: rem(28);
+		height: rem(20);
+		position: relative;
+		@media (max-width: $tablet) {
+			display: block;
+		}
+
+		&::after,
+		&::before,
+		span {
+			content: "";
+			display: block;
+			width: 100%;
+			height: rem(3);
+			background-color: $bgBlueDark;
+			position: absolute;
+			transition:
+				transform 0.3s ease 0s,
+				width 0.3s ease 0s,
+				top 0.3s ease 0s;
+		}
+
+		&::after {
+			top: 0;
+		}
+		span {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&::before {
+			bottom: 0;
+		}
+
+		&.active {
+			&::after {
+				top: 50%;
+				transform: translateY(-50%) rotate(-45deg);
+			}
+			span {
+				width: 0;
+			}
+			&::before {
+				top: 50%;
+				transform: translateY(-50%) rotate(45deg);
+			}
+		}
+	}
+	&__categories {
+		display: flex;
+		gap: rem(20);
+
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+	&__category {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: rem(2);
+			width: 100%;
+			background-color: $bgBlueDark;
+			opacity: 0;
+			transition:
+				opacity 0.3s ease 0s,
+				color 0.3s ease 0s;
+		}
+
+		&:focus,
+		&:hover {
+			color: $colorSecondary;
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		&:hover > .header__lists {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&__button {
+		padding: rem(10) 0;
+		font-size: inherit;
+		white-space: nowrap;
+		font-weight: 600;
+		color: $bgTernary;
+	}
+
+	&__lists {
+		visibility: hidden;
+		opacity: 0;
+		transition:
+			opacity 0.3s ease 0s,
+			visibility 0.3s ease 0s;
+
+		position: absolute;
+		z-index: 10;
+		background-color: $bgMain;
+		top: rem(40);
+		min-width: 100%; // ??
+		// border: 1px solid #000;
+		padding: rem(15);
+		box-shadow: 0px 0px rem(5) 0px rgba(0, 0, 0, 0.75);
+	}
+	&__list {
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+
+		a {
+			color: inherit;
+			transition: color 0.3s ease 0s;
+			position: relative;
+			white-space: nowrap;
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: rem(2);
+				background-color: $bgBlueDark;
+				opacity: 0;
+				transition: opacity 0.3s ease 0s;
+			}
+			&:hover {
+				color: $colorBlue;
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

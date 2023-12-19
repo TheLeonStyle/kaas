@@ -1,0 +1,6 @@
+@import "./scss/mixins";
+body {
+	color: $colorMain;
+	font-size: rem(16);
+	font-family: "Raleway", sans-serif;
+}

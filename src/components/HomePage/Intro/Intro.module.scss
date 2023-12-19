@@ -1,0 +1,96 @@
+@import "../../../scss/mixins";
+.intro {
+	padding-top: rem(130);
+	@include adaptiveValue("padding-bottom", 50, 30, 991.98, 320, 1);
+
+	@media (max-width: $tablet) {
+		@include adaptiveValue("padding-top", 100, 75, 991.98, 320, 1);
+	}
+
+	&__container {
+		position: relative;
+	}
+	&__image {
+		display: block;
+		width: 100%;
+		height: rem(600);
+
+		@media (max-width: $tablet) {
+			height: calc((100vw * 9) / 16);
+			max-height: calc((100vw * 9) / 16);
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		// &:hover .intro__text {
+		// 	opacity: 1;
+		// }
+	}
+	&__text {
+		// opacity: 0;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+		background-color: rgba($color: $bgMain, $alpha: 0.7);
+		width: 100%;
+		// padding: rem(50);
+		@include adaptiveValue("padding", 50, 10, 991.98, 767.98, 1);
+		// transition: opacity 0.3s ease 0s;
+		@media (max-width: $mobile) {
+			position: static;
+			background-color: $bgSecondary;
+		}
+	}
+	&__title {
+		font-size: rem(22);
+		@include adaptiveValue("font-size", 22, 18, 767.98, 320, 1);
+		font-weight: 700;
+		color: $colorBlue;
+		&:not(:last-child) {
+			margin-bottom: em(10, 18);
+		}
+	}
+	&__subtitle {
+		font-size: rem(18);
+		@include adaptiveValue("font-size", 18, 14, 767.98, 320, 1);
+		font-weight: 600;
+		color: $colorSecondary;
+	}
+	&__button {
+		position: absolute;
+		top: 50%;
+		transform: translate(0px, -50%);
+		z-index: 200;
+		height: 100%;
+		width: 10%;
+		font-size: 0;
+		transition: background-color 0.3s ease 0s;
+		&::after {
+			content: "";
+			display: none;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba($color: $bgMain, $alpha: 0.2);
+			}
+		}
+
+		@media (max-width: $mobile) {
+			width: 20%;
+		}
+		@media (max-width: $mobileSmall) {
+			display: none; // Удалить навигацию на маленьких экранах
+		}
+	}
+	&__prev {
+		left: rem(15);
+	}
+	&__next {
+		right: rem(15);
+	}
+}
