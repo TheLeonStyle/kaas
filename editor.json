@@ -120,17 +120,17 @@
           "link": "/",
           "array": [
             {
-              "title": "Прямые",
+              "title": "Распашные",
               "image": "1.jpg",
               "link": "/"
             },
             {
-              "title": "Угловые",
+              "title": "Шкафы-купе",
               "image": "2.jpg",
               "link": "/"
             },
             {
-              "title": "Индивидуальные",
+              "title": "Угловые",
               "image": "3.jpg",
               "link": "/"
             }
@@ -143,17 +143,17 @@
           "link": "/",
           "array": [
             {
-              "title": "Прямые",
+              "title": "Тумбы",
               "image": "1.webp",
               "link": "/"
             },
             {
-              "title": "Угловые",
+              "title": "Комоды",
               "image": "2.jpg",
               "link": "/"
             },
             {
-              "title": "Индивидуальные",
+              "title": "Зеркала",
               "image": "3.jpg",
               "link": "/"
             }
