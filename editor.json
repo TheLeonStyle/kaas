@@ -163,7 +163,7 @@
     },
     "latest": {
       "title": "Новинки",
-      "path": "latest",
+      "path": "Latest",
       "array": [
         {
           "image": "1.webp",
@@ -233,7 +233,7 @@
     },
     "popular": {
       "title": "Популярные",
-      "path": "popular",
+      "path": "Popular",
       "array": [
         {
           "image": "1.webp",
