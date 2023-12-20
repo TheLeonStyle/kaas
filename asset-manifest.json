@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kaas/static/css/main.373ad354.css",
-    "main.js": "/kaas/static/js/main.ac348372.js",
+    "main.js": "/kaas/static/js/main.2313a99c.js",
     "static/media/logo.svg": "/kaas/static/media/logo.07c4bb0f53aa4dab70f0e84ea7b401a6.svg",
     "index.html": "/kaas/index.html",
     "main.373ad354.css.map": "/kaas/static/css/main.373ad354.css.map",
-    "main.ac348372.js.map": "/kaas/static/js/main.ac348372.js.map"
+    "main.2313a99c.js.map": "/kaas/static/js/main.2313a99c.js.map"
   },
   "entrypoints": [
     "static/css/main.373ad354.css",
-    "static/js/main.ac348372.js"
+    "static/js/main.2313a99c.js"
   ]
 }
