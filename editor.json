@@ -1,53 +1,60 @@
 {
-  "header": [
-    {
-      "title": "Кухонные гарнитуры",
-      "array": [
-        {
-          "title": "Прямые",
-          "link": "/"
-        },
-        {
-          "title": "Угловые",
-          "link": "/"
-        },
-        {
-          "title": "Индивидуальные",
-          "link": "/"
-        }
-      ]
-    },
-    {
-      "title": "Шкаф",
-      "array": [
-        {
-          "title": "Распашные",
-          "link": "/"
-        },
-        {
-          "title": "Шкафы-купе",
-          "link": "/"
-        },
-        {
-          "title": "Угловые",
-          "link": "/"
-        }
-      ]
-    },
-    {
-      "title": "Прихожая",
-      "array": [
-        {
-          "title": "Тумбы и комоды",
-          "link": "/"
-        },
-        {
-          "title": "Зеркала",
-          "link": "/"
-        }
-      ]
-    }
-  ],
+  "header": {
+    "instagram": "https://www.instagram.com",
+    "tiktok": "https://www.tiktok.com/ru-RU/",
+    "youtube": "https://www.youtube.com",
+    "mail": "kaas@gmail.com",
+    "phone": "+77777777777",
+    "array": [
+      {
+        "title": "Кухонные гарнитуры",
+        "array": [
+          {
+            "title": "Прямые",
+            "link": "/"
+          },
+          {
+            "title": "Угловые",
+            "link": "/"
+          },
+          {
+            "title": "Индивидуальные",
+            "link": "/"
+          }
+        ]
+      },
+      {
+        "title": "Шкаф",
+        "array": [
+          {
+            "title": "Распашные",
+            "link": "/"
+          },
+          {
+            "title": "Шкафы-купе",
+            "link": "/"
+          },
+          {
+            "title": "Угловые",
+            "link": "/"
+          }
+        ]
+      },
+      {
+        "title": "Прихожая",
+        "array": [
+          {
+            "title": "Тумбы и комоды",
+            "link": "/"
+          },
+          {
+            "title": "Зеркала",
+            "link": "/"
+          }
+        ]
+      }
+    ]
+  },
   "home": {
     "intro": [
       {
@@ -300,6 +307,27 @@
           "link": "/"
         }
       ]
+    }
+  },
+  "footer": {
+    "array": [
+      {
+        "title": "Главный офис",
+        "time": "с 09:00 до 20:00",
+        "phone": "+77777777777",
+        "mail": "kaas@gmail.com"
+      },
+      {
+        "title": "Интернет-магазин",
+        "time": "с 10:00 до 21:00",
+        "phone": "+77777777777",
+        "mail": "kaas@gmail.com"
+      }
+    ],
+    "copyright": "© 2000 – 2023 Фабрика модульных кухонь «Kaas»",
+    "policy": {
+      "title": "Политика конфиденциальности",
+      "link": "/"
     }
   }
 }
